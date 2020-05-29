@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
+import {ApolloProvider} from '@apollo/client';
+import {client} from './apis/apolloClient';
+
+//Components
+import Header from './components/header/Header';
+import Content from './components/content/Content';
+
+//App.css
 import './App.css';
+import './components/Style.css'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	//Hook for the data loaded
+	const [response, setResponse] = useState(null);
+	const [param, setParam] = useState(null);
+
+	const updateResponse = (resp, queryParam) => {
+		setParam(queryParam);
+		setResponse(resp);
+	}
+
+	//Return the data
+	return (
+		<ApolloProvider client={client}>
+			<Header siteName={"Rick&Morty"} updateResponse={updateResponse}/>
+			{response ?
+				<Content data={response} queryParam={param} updateResponse={updateResponse}/>
+				:
+				null
+			}
+		</ApolloProvider>
+	);
 }
 
 export default App;
