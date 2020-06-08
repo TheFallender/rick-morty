@@ -1,5 +1,5 @@
 {
-  "name": "react_rickmorty",
+  "name": "rick-morty",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -15,7 +15,7 @@
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1"
   },
-  "homepage": "https://thefallender.github.io/react_rickmorty",
+  "homepage": "https://thefallender.github.io/rick-morty",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

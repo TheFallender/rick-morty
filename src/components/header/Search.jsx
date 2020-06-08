@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {gql, useLazyQuery} from '@apollo/client';
 
 //Style
@@ -56,6 +56,12 @@ const Search = props => {
         //Prevent page change
         return false;
     }
+
+    //On Start make a simple search with no parameters
+    useEffect(() => {
+        searchChars[0]({variables: {page: 1, searchQ: "", status: ""}});
+        //eslint-disable-next-line
+    }, []);
 
 
     //Search Result Complete
