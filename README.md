@@ -9,4 +9,4 @@ To launch it, you have to:
 4. A tab will open on your browser pointing to: [localhost:3000](http://localhost:3000)
 
 If you do not want to go through this process. You can see a working version on:
-[thefallender.github.io/react_rickmorty](https://thefallender.github.io/rick-morty)
+[thefallender.github.io/rick-morty](https://thefallender.github.io/rick-morty)
